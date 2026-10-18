@@ -1,0 +1,1744 @@
+/* ==========================================================================
+   RESIDENCIAL AVILA - Estilos Principales
+   Paleta Oficial:
+   - Dorado Sol Tropical: #F8B229
+   - Rojo Anaranjado Coral: #EA4630
+   - Rojo Rubí Elegante: #BB2528
+   - Verde Esmeralda Tropical: #146B3A
+   - Verde Selva Profundo: #0B3D2E
+   ========================================================================== */
+
+:root {
+  /* Paleta enviada por el usuario */
+  --color-gold: #F8B229;
+  --color-gold-hover: #e59f1c;
+  --color-gold-light: rgba(248, 178, 41, 0.15);
+  --color-coral: #EA4630;
+  --color-ruby: #BB2528;
+  --color-emerald: #146B3A;
+  --color-emerald-light: #1c884b;
+  --color-dark-green: #0B3D2E;
+  --color-dark-green-deep: #07251c;
+  --color-dark-surface: #10261f;
+
+  /* Colores de soporte y fondos */
+  --color-cream: #FAF7EE;
+  --color-cream-soft: #F4EFE2;
+  --color-card-bg: #FFFFFF;
+  --color-text-dark: #1E2522;
+  --color-text-muted: #596560;
+  --color-text-light: #F7FAF8;
+  --color-border: #E5DFD1;
+  --color-border-focus: #F8B229;
+  
+  /* Sombras y elevaciones */
+  --shadow-sm: 0 2px 8px rgba(11, 61, 46, 0.06);
+  --shadow-md: 0 8px 24px rgba(11, 61, 46, 0.08);
+  --shadow-lg: 0 16px 36px rgba(11, 61, 46, 0.14);
+  --shadow-gold: 0 8px 20px rgba(248, 178, 41, 0.28);
+  --shadow-whatsapp: 0 8px 24px rgba(37, 211, 102, 0.35);
+
+  /* Tipografías */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Bordes redondeados */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+
+  /* Transición estándar */
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset y base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-text-dark);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   TIPOGRAFÍA Y ENCABEZADOS
+   ========================================================================== */
+
+h1, h2, h3, h4, .serif-font {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-dark-green);
+  line-height: 1.25;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-emerald);
+  background: rgba(20, 107, 58, 0.1);
+  padding: 0.35rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.section-tag.light {
+  background: rgba(248, 178, 41, 0.2);
+  color: var(--color-gold);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.gold-text {
+  color: var(--color-gold);
+}
+
+.emerald-text {
+  color: var(--color-emerald);
+}
+
+/* ==========================================================================
+   BOTONES Y ELEMENTOS DE ACCIÓN
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.98rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-emerald), var(--color-dark-green));
+  color: #FFFFFF;
+  box-shadow: 0 4px 15px rgba(20, 107, 58, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(20, 107, 58, 0.45);
+  background: linear-gradient(135deg, var(--color-emerald-light), var(--color-dark-green));
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--color-gold), #e0981b);
+  color: var(--color-dark-green-deep);
+  font-weight: 700;
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(248, 178, 41, 0.45);
+  filter: brightness(1.05);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: var(--shadow-whatsapp);
+}
+
+.btn-whatsapp:hover {
+  background: #20BD5A;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.5);
+}
+
+.btn-outline {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  background: rgba(248, 178, 41, 0.12);
+  transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+  border-color: var(--color-dark-green);
+  color: var(--color-dark-green);
+  background: transparent;
+}
+
+.btn-outline-dark:hover {
+  background: var(--color-dark-green);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   TOP BAR & HEADER
+   ========================================================================== */
+
+.topbar {
+  background: var(--color-dark-green-deep);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(248, 178, 41, 0.2);
+}
+
+.topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.topbar-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.topbar-item svg {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(250, 247, 238, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border);
+  transition: var(--transition);
+}
+
+.header.scrolled {
+  box-shadow: 0 4px 20px rgba(11, 61, 46, 0.08);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-logo img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-dark-green);
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--color-gold);
+  transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-emerald);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-dark-green);
+  padding: 0.5rem;
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-dark-green-deep);
+  color: #FFFFFF;
+  overflow: hidden;
+  padding: 5rem 0 4rem;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.38) saturate(1.15);
+  transform: scale(1.02);
+  transition: transform 8s ease;
+}
+
+.hero:hover .hero-bg img {
+  transform: scale(1.06);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(circle at center, rgba(11, 61, 46, 0.4) 0%, rgba(7, 37, 28, 0.9) 85%);
+}
+
+.hero-leaves-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.05;
+  background-image: radial-gradient(#F8B229 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-badge-wrap {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+
+.hero-badge-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 3px var(--color-gold);
+  background: var(--color-dark-green-deep);
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.hero-title {
+  font-size: clamp(2.3rem, 5.2vw, 4rem);
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.hero-title span {
+  color: var(--color-gold);
+  display: inline-block;
+}
+
+.hero-desc {
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 720px;
+  margin: 0 auto 2.25rem;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.75rem;
+}
+
+.hero-features-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(248, 178, 41, 0.3);
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.hero-feat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.hero-feat-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(248, 178, 41, 0.18);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-feat-text strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #FFFFFF;
+}
+
+.hero-feat-text span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ==========================================================================
+   COTIZADOR / RESERVA RÁPIDA (QUICK BOOKING ENGINE)
+   ========================================================================== */
+
+.booking-strip {
+  position: relative;
+  z-index: 10;
+  margin-top: -3.5rem;
+  margin-bottom: 4rem;
+}
+
+.booking-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 1.75rem 2rem;
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-gold);
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) auto;
+  gap: 1.25rem;
+  align-items: end;
+}
+
+.booking-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.booking-field label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-dark-green);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.booking-field label svg {
+  color: var(--color-emerald);
+}
+
+.booking-field input, .booking-field select {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid #D5DDD8;
+  background: #FAFBF9;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  transition: var(--transition);
+  outline: none;
+}
+
+.booking-field input:focus, .booking-field select:focus {
+  border-color: var(--color-gold);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(248, 178, 41, 0.2);
+}
+
+.booking-submit-btn {
+  height: 50px;
+  padding: 0 1.85rem;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   ACERCA DE / SOBRE RESIDENCIAL AVILA
+   ========================================================================== */
+
+.section {
+  padding: 5rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-images-wrap {
+  position: relative;
+}
+
+.about-main-img {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 3px solid #FFFFFF;
+}
+
+.about-main-img img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.about-main-img:hover img {
+  transform: scale(1.03);
+}
+
+.about-badge-float {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: var(--color-dark-green);
+  color: #FFFFFF;
+  padding: 1.5rem 1.85rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--color-gold);
+  max-width: 240px;
+  text-align: center;
+}
+
+.about-badge-float .num {
+  font-size: 2.4rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.about-badge-float .label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.about-content .section-title {
+  text-align: left;
+}
+
+.about-lead {
+  font-size: 1.15rem;
+  color: var(--color-emerald);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.about-desc {
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  font-size: 1.02rem;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.highlight-box {
+  background: var(--color-card-bg);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  transition: var(--transition);
+}
+
+.highlight-box:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.highlight-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(20, 107, 58, 0.12);
+  color: var(--color-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.highlight-box h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.highlight-box p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   HABITACIONES (ROOMS)
+   ========================================================================== */
+
+.rooms-section {
+  background: #F3EFE6;
+  position: relative;
+}
+
+.rooms-filter {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 2.5rem 0 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.65rem 1.6rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-dark-green);
+  background: transparent;
+  color: var(--color-dark-green);
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--color-dark-green);
+  color: var(--color-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.25rem;
+}
+
+.room-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.room-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
+}
+
+.room-img-wrap {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.room-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.room-card:hover .room-img-wrap img {
+  transform: scale(1.06);
+}
+
+.room-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(11, 61, 46, 0.9);
+  color: var(--color-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--color-gold);
+}
+
+.room-climate-tag {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(234, 70, 48, 0.92);
+  color: #FFFFFF;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  backdrop-filter: blur(4px);
+}
+
+.room-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.room-title {
+  font-size: 1.35rem;
+}
+
+.room-capacity {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-emerald);
+  background: rgba(20, 107, 58, 0.1);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.room-desc {
+  font-size: 0.94rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.55;
+}
+
+.room-amenities-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.room-amenity-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  background: var(--color-cream);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-dark);
+}
+
+.room-amenity-pill svg {
+  color: var(--color-emerald);
+  width: 14px;
+  height: 14px;
+}
+
+.room-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.room-features-summary {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.room-features-summary strong {
+  display: block;
+  color: var(--color-dark-green);
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   SERVICIOS Y COMODIDADES
+   ========================================================================== */
+
+.amenities-section {
+  background: #FFFFFF;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  margin-top: 3.5rem;
+}
+
+.amenity-card {
+  background: var(--color-cream);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.amenity-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  transition: var(--transition);
+}
+
+.amenity-card:hover {
+  transform: translateY(-6px);
+  background: #FFFFFF;
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.amenity-card:hover::before {
+  background: linear-gradient(90deg, var(--color-gold), var(--color-emerald));
+}
+
+.amenity-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--color-dark-green);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.35rem;
+  box-shadow: 0 6px 16px rgba(11, 61, 46, 0.2);
+  transition: var(--transition);
+}
+
+.amenity-card:hover .amenity-icon-box {
+  transform: scale(1.08) rotate(4deg);
+  background: var(--color-emerald);
+  color: #FFFFFF;
+}
+
+.amenity-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.amenity-desc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   CABAÑA PARA EVENTOS Y RECEPCIONES
+   ========================================================================== */
+
+.cabana-section {
+  background: linear-gradient(135deg, var(--color-dark-green-deep) 0%, var(--color-dark-green) 100%);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.cabana-leaves-bg {
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(20, 107, 58, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cabana-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.cabana-content .section-title {
+  color: #FFFFFF;
+  text-align: left;
+}
+
+.cabana-lead {
+  font-size: 1.15rem;
+  color: var(--color-gold);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.cabana-desc {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.02rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.cabana-tags-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+}
+
+.cabana-tag-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(248, 178, 41, 0.25);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+}
+
+.cabana-tag-item svg {
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.cabana-gallery-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(248, 178, 41, 0.35);
+}
+
+.cabana-gallery-card img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.cabana-gallery-card:hover img {
+  transform: scale(1.04);
+}
+
+.cabana-floating-box {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: rgba(11, 61, 46, 0.9);
+  backdrop-filter: blur(12px);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cabana-floating-box h5 {
+  font-size: 1.05rem;
+  color: #FFFFFF;
+}
+
+.cabana-floating-box p {
+  font-size: 0.82rem;
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   GARAJE PRIVADO CON 2 ACCESOS
+   ========================================================================== */
+
+.garage-section {
+  background: var(--color-cream);
+}
+
+.garage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.garage-img-wrapper {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 3px solid #FFFFFF;
+}
+
+.garage-img-wrapper img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.garage-entrances-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 1.75rem 0;
+}
+
+.entrance-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  border: 1.5px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.entrance-card:hover {
+  border-color: var(--color-emerald);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.entrance-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: var(--color-emerald);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.5rem;
+}
+
+.entrance-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.entrance-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   UBICACIÓN & TURISMO EN IVIRGARZAMA
+   ========================================================================== */
+
+.location-section {
+  background: #FFFFFF;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.location-info-card {
+  background: var(--color-cream);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.location-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.location-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.location-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(20, 107, 58, 0.12);
+  color: var(--color-emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.location-detail-item h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-dark-green);
+  margin-bottom: 0.2rem;
+}
+
+.location-detail-item p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.map-container {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--color-border);
+  min-height: 440px;
+  position: relative;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  border: none;
+}
+
+/* ==========================================================================
+   PREGUNTAS FRECUENTES (FAQ)
+   ========================================================================== */
+
+.faq-section {
+  background: var(--color-cream);
+}
+
+.faq-accordion {
+  max-width: 820px;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-item.active {
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-dark-green);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  color: var(--color-emerald);
+}
+
+.faq-icon {
+  font-size: 1.25rem;
+  color: var(--color-gold);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+  color: var(--color-coral);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   CONTACTO DIRECTO & FORMULARIO
+   ========================================================================== */
+
+.contact-section {
+  background: #FFFFFF;
+}
+
+.contact-card-wrapper {
+  background: linear-gradient(135deg, var(--color-dark-green-deep), var(--color-dark-green));
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 3.5rem;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3.5rem;
+  position: relative;
+  border: 1px solid rgba(248, 178, 41, 0.3);
+}
+
+.contact-info .section-title {
+  color: #FFFFFF;
+  text-align: left;
+}
+
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.contact-channel-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-channel-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(248, 178, 41, 0.2);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-channel-text small {
+  display: block;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.contact-channel-text strong {
+  font-size: 1.05rem;
+  color: #FFFFFF;
+}
+
+.contact-form {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  color: var(--color-text-dark);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--color-dark-green);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid #D5DDD8;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+  background: #FAFBF9;
+}
+
+.form-control:focus {
+  border-color: var(--color-gold);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(248, 178, 41, 0.2);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.footer {
+  background: var(--color-dark-green-deep);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 4.5rem 0 2rem;
+  border-top: 3px solid var(--color-gold);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand img {
+  height: 58px;
+  width: auto;
+  margin-bottom: 1.25rem;
+}
+
+.footer-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.footer-title {
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--color-gold);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.92rem;
+}
+
+.footer-links a:hover {
+  color: var(--color-gold);
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   WIDGET FLOTANTE DE WHATSAPP
+   ========================================================================== */
+
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 62px;
+  height: 62px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  z-index: 999;
+  cursor: pointer;
+  transition: var(--transition);
+  animation: pulseGreen 2.5s infinite;
+}
+
+.whatsapp-float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.65);
+}
+
+.whatsapp-float-tooltip {
+  position: absolute;
+  right: 74px;
+  background: #FFFFFF;
+  color: var(--color-dark-green);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
+}
+
+.whatsapp-float-btn:hover .whatsapp-float-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ==========================================================================
+   MODAL DE DETALLES DE HABITACIÓN
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 37, 28, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.95);
+  transition: var(--transition);
+  border: 2px solid var(--color-gold);
+}
+
+.modal-backdrop.open .modal-content {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+}
+
+.modal-close-btn:hover {
+  background: var(--color-coral);
+}
+
+.modal-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .about-grid, .cabana-grid, .garage-grid, .location-grid, .contact-card-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-badge-float {
+    bottom: -1rem;
+    right: 1rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .booking-submit-btn {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background: #FFFFFF;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1.25rem;
+    box-shadow: var(--shadow-lg);
+    border-bottom: 2px solid var(--color-gold);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+  }
+
+  .nav-menu.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-actions .btn {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 4rem 0 3rem;
+  }
+
+  .hero-features-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-strip {
+    margin-top: 1.5rem;
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-submit-btn {
+    grid-column: span 1;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .garage-entrances-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card-wrapper {
+    padding: 1.75rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .whatsapp-float-btn {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 54px;
+    height: 54px;
+  }
+}
